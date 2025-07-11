@@ -51,4 +51,4 @@ These Terms may be updated at any time. Continued use of Grivn after changes are
 
 ## 6. Contact and Support
 
-For questions, bug reports, feature requests, or data inquiries, contact us via the official support server: [https://discord.gg/ZPZvmj8Yd7](https://discord.gg/ZPZvmj8Yd7)
+For questions, bug reports, feature requests, or data inquiries, contact us via the official support server: [Grivn.dev](https://discord.gg/ZPZvmj8Yd7)
