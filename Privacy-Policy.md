@@ -85,4 +85,4 @@ We may update this Privacy Policy at any time. Significant changes will be annou
 ## 9. Contact
 
 If you have questions about this policy or would like to request data removal, please contact the team through our support server:  
-🔗 [https://discord.gg/ZPZvmj8Yd7](https://discord.gg/ZPZvmj8Yd7)
+🔗 [Grivn.dev](https://discord.gg/ZPZvmj8Yd7)
