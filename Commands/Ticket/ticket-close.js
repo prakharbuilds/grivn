@@ -51,7 +51,7 @@ module.exports = {
           lastMessageId = messages.last().id;
         }
 
-        return allMessages.reverse(); // Chronological order
+        return allMessages.reverse(); 
       };
 
       const messages = await fetchAllMessages(thread);
