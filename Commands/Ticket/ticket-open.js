@@ -2,8 +2,8 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ThreadAutoArchiv
 const { QuickDB } = require('quick.db');
 const db = new QuickDB();
 
-const MODLOG_CHANNEL_ID = '1388102363255930920'; // Ticket log channel
-const TICKET_CHANNEL_ID = '1388018356212465765'; // Only allowed here
+const MODLOG_CHANNEL_ID = '1388102363255930920'; 
+const TICKET_CHANNEL_ID = '1388018356212465765'; 
 
 module.exports = {
   data: new SlashCommandBuilder()
