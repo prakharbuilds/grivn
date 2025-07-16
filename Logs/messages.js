@@ -6,6 +6,7 @@ module.exports = {
   name: Events.ClientReady,
   once: true,
   execute(client) {
+    // Send an embed (and optional files) to the log channel
     const sendLog = async (embed, files = []) => {
       const logChannel = await client.channels.fetch(logChannelId).catch(() => null);
       if (logChannel?.isTextBased()) {
@@ -13,14 +14,14 @@ module.exports = {
       }
     };
 
-    // Format location as "#channel in Category" or just "#channel"
+    // Return "#channel in Category" or "#channel"
     const formatLocation = (channel) => {
       return channel.parent
         ? `#${channel.name} in **${channel.parent.name}**`
         : `#${channel.name}`;
     };
 
-    // Log message edits
+    // Handle edited messages
     client.on(Events.MessageUpdate, async (oldMsg, newMsg) => {
       if (
         oldMsg.partial || newMsg.partial ||
@@ -43,7 +44,6 @@ module.exports = {
           {
             name: 'Mentions',
             value: newMsg.mentions.users.map(u => `<@${u.id}>`).join(', ') || 'None',
-            inline: false
           },
           {
             name: 'Jump to Message',
@@ -54,14 +54,14 @@ module.exports = {
 
       const files = [];
 
-      // Attachments (new message)
+      // Include any new attachments
       if (newMsg.attachments.size > 0) {
         for (const [, attachment] of newMsg.attachments) {
           files.push(new AttachmentBuilder(attachment.url));
         }
       }
 
-      // Embeds (summary note)
+      // Note embedded content if present
       if (newMsg.embeds.length > 0) {
         embed.addFields({
           name: 'Embeds',
@@ -72,7 +72,7 @@ module.exports = {
       sendLog(embed, files);
     });
 
-    // Log message deletions
+    // Handle deleted messages
     client.on(Events.MessageDelete, async (msg) => {
       if (msg.partial || !msg.guild || msg.author?.bot) return;
 
@@ -89,26 +89,24 @@ module.exports = {
           {
             name: 'Content',
             value: msg.content?.slice(0, 1024) || '*No content*',
-            inline: false
           },
           {
             name: 'Mentions',
             value: msg.mentions.users.map(u => `<@${u.id}>`).join(', ') || 'None',
-            inline: false
           }
         )
         .setTimestamp();
 
       const files = [];
 
-      // Attachments
+      // Include any attachments
       if (msg.attachments.size > 0) {
         for (const [, attachment] of msg.attachments) {
           files.push(new AttachmentBuilder(attachment.url));
         }
       }
 
-      // Embeds (summary note)
+      // Note embedded content if present
       if (msg.embeds.length > 0) {
         embed.addFields({
           name: 'Embeds',
