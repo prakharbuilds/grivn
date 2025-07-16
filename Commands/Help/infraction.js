@@ -18,7 +18,7 @@ module.exports = {
     const userOptions = members.map(member => ({
       label: member.user.tag,
       value: member.id
-    })).slice(0, 25); // Limit dropdown to 25 due to Discord API
+    })).slice(0, 25); 
 
     const selectMenu = new StringSelectMenuBuilder()
       .setCustomId('infractions_select')
