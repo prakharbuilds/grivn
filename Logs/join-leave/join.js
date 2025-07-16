@@ -1,6 +1,6 @@
 const { Events, EmbedBuilder } = require('discord.js');
 
-const welcomeChannelId = '1388100686507409519'; // Log channel for joins/leaves
+const welcomeChannelId = '1388100686507409519'; 
 const welcomeMessage = (user) => 
   `Hey ${user.displayName}!!\n\nWelcome to Bhaichara! Just a quick heads-up to keep you safe while you're here:\n
 1. Please don’t share your personal information with anyone — even if they seem friendly.  
@@ -28,7 +28,7 @@ module.exports = {
       await logChannel.send({ embeds: [embed] });
     }
 
-    // DM the user
+    // DM user
     try {
       await member.send(welcomeMessage(member));
     } catch (err) {
