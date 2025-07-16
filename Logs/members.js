@@ -1,7 +1,6 @@
 const { Events, EmbedBuilder } = require('discord.js');
 
-const logChannelId = '1388100848151953489'; // Your log channel
-
+const logChannelId = '1388100848151953489'; 
 module.exports = {
   name: Events.GuildMemberUpdate,
   async execute(oldMember, newMember) {
