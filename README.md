@@ -55,7 +55,6 @@ You can also run it on Replit or any Node.js-compatible host.
 ## 📄 License
 
 This project is licensed under the **GNU General Public License v3.0**.
-You are free to use, modify, and redistribute — as long as it remains open-source.
 
 ---
 
